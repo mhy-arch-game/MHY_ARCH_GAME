@@ -25,6 +25,9 @@ public class MHY_ARCH_GAME : ModuleRules
 
 		PublicIncludePaths.AddRange(new string[] {
 			"MHY_ARCH_GAME",
+			"MHY_ARCH_GAME/LightReveal",
+			"MHY_ARCH_GAME/LightReveal/Interfaces",
+			"MHY_ARCH_GAME/LiquidLight",
 			"MHY_ARCH_GAME/Variant_Platforming",
 			"MHY_ARCH_GAME/Variant_Platforming/Animation",
 			"MHY_ARCH_GAME/Variant_Combat",
