@@ -53,6 +53,8 @@ public:
 	bool IsRevealed() const { return bRevealed; }
 
 protected:
+	virtual void BeginPlay() override;
+
 	// -- editor tuning -----------------------------------------------------
 	/** If true, once lit the platform stays passable forever (one-way gate). */
 	UPROPERTY(EditAnywhere, Category="LightReveal")
