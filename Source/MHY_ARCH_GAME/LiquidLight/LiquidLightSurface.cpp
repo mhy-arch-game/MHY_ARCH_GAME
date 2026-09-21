@@ -35,7 +35,7 @@ void ALiquidLightSurface::BeginPlay()
 	{
 		if (UMaterialInterface* BaseMat = FluidSurface->GetMaterial(0))
 		{
-			SurfaceMID = FluidSurface->CreateAndSetMaterialInstanceDynamicFromMaterial(0, BaseMat);
+			SurfaceMID = FluidSurface->CreateDynamicMaterialInstance(0, BaseMat);
 		}
 	}
 
