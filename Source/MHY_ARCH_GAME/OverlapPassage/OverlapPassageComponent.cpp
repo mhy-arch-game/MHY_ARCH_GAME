@@ -372,8 +372,10 @@ void UOverlapPassageComponent::ApplyOverlapAppearance()
 			State.OverlapMIDs.Reset();
 			for (int32 Index = 0; Index < NumMats; ++Index)
 			{
+				// Note: both branches must be the same type, otherwise the ternary is
+				// ambiguous between TObjectPtr<UMaterialInterface> and UMaterialInterface*.
 				UMaterialInterface* Base = State.OriginalMaterials.IsValidIndex(Index)
-					? State.OriginalMaterials[Index]
+					? State.OriginalMaterials[Index].Get()
 					: Mesh->GetMaterial(Index);
 
 				UMaterialInstanceDynamic* MID = Mesh->CreateDynamicMaterialInstance(Index, Base);
