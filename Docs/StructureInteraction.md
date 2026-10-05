@@ -79,7 +79,7 @@
 2. **建结构蓝图**：右键 `AInteractiveStructure` → `Create Blueprint class` → 命名 `BP_InteractiveStructure`。
 3. **加方块**：在蓝图 Components 面板 **Add → `Structure Block`**，添加若干块：
    - 每块下方再 **Add → `Static Mesh`**，并把它**拖到对应 `Structure Block` 之下**作为子组件
-     （块本体是变换/状态锚点，子网格才是可见可碰撞的块体；未挂子网格的块会被跳过并打日志）；
+     （块本体是变换/状态锚点，子网格才是可见可碰撞的块体；未挂子网格的块会被静默跳过）；
    - 选中子网格 → 指定 `Static Mesh`（如 `SM_Cube`）、位置与缩放；
    - 选中该 `Structure Block` → 设置 `Closed Transform` / `Open Transform`（相对结构的开合位置）；
    - 设置材质集的 `Normal Material` / `Active Material`（可选 `Disabled Material`、`Highlight Material`）。
@@ -115,3 +115,13 @@
 - 呈现的**后处理描边材质、粒子/相机反馈、HUD 提示**为预留项，需美术/HUD 侧接入。
 - 结构状态为单枚举（本模块不处理复杂序列）；若后续需要多阶段行为，可迁移到项目已启用的 **StateTree**。
 - `UStructureVisualComponent` 由 `AInteractiveStructure` 自动创建；不要在同一结构上重复添加。
+
+---
+
+## 八、相关文档
+
+| 文档 | 内容 |
+|---|---|
+| `Docs/InteractionLogic.md` | 交互部分的**人机活动逻辑**（时序、焦点、评分、状态机、边界），以及第 13 节**解耦逻辑与设计原理详解**（依赖倒置 / 接口隔离 / 开闭原则 / 组合优于继承 / 耦合矩阵与权衡） |
+| `Docs/OverlapDemo.md` | `OverlapPassage`（两物体重叠处可通行 + 变材质/透明）的操作与 demo 指南 |
+| `Docs/LiquidLight.md` | 光照液体流动表现的实现说明 |
