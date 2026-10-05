@@ -44,7 +44,7 @@ void ARevealPlatform::BeginPlay()
 	{
 		if (UMaterialInterface* BaseMat = VisualMesh->GetMaterial(0))
 		{
-			SurfaceMID = VisualMesh->CreateAndSetMaterialInstanceDynamicFromMaterial(0, BaseMat);
+			SurfaceMID = VisualMesh->CreateDynamicMaterialInstance(0, BaseMat);
 		}
 	}
 }

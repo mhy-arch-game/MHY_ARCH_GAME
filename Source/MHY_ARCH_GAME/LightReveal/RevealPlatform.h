@@ -53,7 +53,6 @@ public:
 	bool IsRevealed() const { return bRevealed; }
 
 protected:
-
 	virtual void BeginPlay() override;
 
 	// -- editor tuning -----------------------------------------------------
