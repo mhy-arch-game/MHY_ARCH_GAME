@@ -19,7 +19,8 @@ public class MHY_ARCH_GAME : ModuleRules
 			"GameplayStateTreeModule",
 			"UMG",
 			"Slate",
-			"MotionWarping"
+			"MotionWarping",
+			"PhysicsCore"
 		});
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
@@ -27,6 +28,7 @@ public class MHY_ARCH_GAME : ModuleRules
 		PublicIncludePaths.AddRange(new string[] {
 			"MHY_ARCH_GAME",
 			"MHY_ARCH_GAME/Climb",
+			"MHY_ARCH_GAME/MovementAudio",
 			"MHY_ARCH_GAME/LightReveal",
 			"MHY_ARCH_GAME/LightReveal/Interfaces",
 			"MHY_ARCH_GAME/LiquidLight",
